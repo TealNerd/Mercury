@@ -85,8 +85,9 @@ public class MercuryAPI {
             for (PlayerDetails player : players) {
                 MercuryAPI.instance.playersByUUID_.put(player.getAccountId(), player);
                 MercuryAPI.instance.playersByName_.put(player.getPlayerName(), player);
-                if (!MercuryAPI.instance.playersByServer_.containsKey(player.getServerName()))
+                if (!MercuryAPI.instance.playersByServer_.containsKey(player.getServerName())) {
                     MercuryAPI.instance.playersByServer_.put(player.getServerName(), new ArrayList<PlayerDetails>());
+                }
                 MercuryAPI.instance.playersByServer_.get(player.getServerName()).add(player);
             }
         }
@@ -134,15 +135,17 @@ public class MercuryAPI {
                     result = false;
                 }
                 // Here we want to remove any previous record if it existed.
-                if (!MercuryAPI.instance.playersByServer_.containsKey(oldDetails.getServerName()))
+                if (!MercuryAPI.instance.playersByServer_.containsKey(oldDetails.getServerName())) {
                     MercuryAPI.instance.playersByServer_
                             .put(oldDetails.getServerName(), new ArrayList<PlayerDetails>());
+                }
                 MercuryAPI.instance.playersByServer_.get(oldDetails.getServerName()).remove(oldDetails);
             }
             MercuryAPI.instance.playersByUUID_.put(details.getAccountId(), details);
             MercuryAPI.instance.playersByName_.put(details.getPlayerName(), details);
-            if (!MercuryAPI.instance.playersByServer_.containsKey(details.getServerName()))
+            if (!MercuryAPI.instance.playersByServer_.containsKey(details.getServerName())) {
                 MercuryAPI.instance.playersByServer_.put(details.getServerName(), new ArrayList<PlayerDetails>());
+            }
             MercuryAPI.instance.playersByServer_.get(details.getServerName()).add(details);
         }
         return result;
@@ -159,8 +162,9 @@ public class MercuryAPI {
             if (details == null) {
                 return;
             }
-            if (!MercuryAPI.instance.playersByServer_.containsKey(details.getServerName()))
+            if (!MercuryAPI.instance.playersByServer_.containsKey(details.getServerName())) {
                 MercuryAPI.instance.playersByServer_.put(details.getServerName(), new ArrayList<PlayerDetails>());
+            }
             MercuryAPI.instance.playersByServer_.get(details.getServerName()).remove(details);
             MercuryAPI.instance.playersByUUID_.remove(accountId);
             MercuryAPI.instance.playersByName_.remove(accountName);
@@ -186,8 +190,9 @@ public class MercuryAPI {
 
     public static ArrayList<PlayerDetails> getAllAccountsByServer(String server) {
         synchronized (MercuryAPI.instance.playerListLock_) {
-            if (!MercuryAPI.instance.playersByServer_.containsKey(server))
+            if (!MercuryAPI.instance.playersByServer_.containsKey(server)) {
                 MercuryAPI.instance.playersByServer_.put(server, new ArrayList<PlayerDetails>());
+            }
             return MercuryAPI.instance.playersByServer_.get(server);
         }
     }

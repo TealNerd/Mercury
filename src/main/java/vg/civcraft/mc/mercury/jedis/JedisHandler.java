@@ -30,8 +30,9 @@ public class JedisHandler implements ServiceHandler {
         String[] servers = x.split(";");
         StringBuilder message = new StringBuilder();
         message.append("The servers that are currently connected are ");
-        for (String z : servers)
+        for (String z : servers) {
             message.append(z + " ");
+        }
         MercuryPlugin.instance.getLogger().log(Level.INFO, message.toString());
     }
 
@@ -39,8 +40,9 @@ public class JedisHandler implements ServiceHandler {
     public void addServerToServerList() {
         Jedis j = pool.getResource();
         String x = j.get("servers");
-        if (x == null)
+        if (x == null) {
             x = "";
+        }
         x += MercuryConfigManager.getServerName() + ";";
         j.set("servers", x);
         j.close();
@@ -49,8 +51,9 @@ public class JedisHandler implements ServiceHandler {
     @Override
     public void sendMessage(String server, String message, String... pluginChannels) {
         Jedis j = pool.getResource();
-        for (String channel : pluginChannels)
+        for (String channel : pluginChannels) {
             j.publish(channel, message);
+        }
         j.close();
     }
 

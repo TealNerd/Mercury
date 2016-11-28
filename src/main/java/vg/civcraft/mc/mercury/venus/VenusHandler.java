@@ -53,8 +53,9 @@ public class VenusHandler implements ServiceHandler {
 
     @Override
     public void destory() {
-        if (service != null)
+        if (service != null) {
             service.teardown();
+        }
     }
 
     @Override

@@ -53,7 +53,7 @@ public class JsonConfiguration implements Configuration {
     public static JsonConfiguration load(File file) {
         Gson gson = new Gson();
         try {
-            return (JsonConfiguration) gson.fromJson(new FileReader(file), JsonConfiguration.class);
+            return gson.fromJson(new FileReader(file), JsonConfiguration.class);
         } catch (Exception e) {
             return new JsonConfiguration();
         }

@@ -11,6 +11,7 @@ public class MercuryBungePlugin extends Plugin {
         return MercuryBungePlugin.plugin.getLogger();
     }
 
+    @Override
     public void onEnable() {
         plugin = this;
         MercuryAPI.initialize();

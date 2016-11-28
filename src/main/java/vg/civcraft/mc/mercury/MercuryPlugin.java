@@ -40,6 +40,7 @@ public class MercuryPlugin extends JavaPlugin {
         name = MercuryConfigManager.getServerName();
     }
 
+    @Override
     public void onDisable() {
         MercuryAPI.shutdown();
     }

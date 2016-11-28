@@ -17,7 +17,7 @@ public class PlayerDetails {
     public static PlayerDetails deserialize(String json) {
         Gson gson = new Gson();
         try {
-            return (PlayerDetails) gson.fromJson(json, PlayerDetails.class);
+            return gson.fromJson(json, PlayerDetails.class);
         } catch (JsonSyntaxException e) {
             return null;
         }
