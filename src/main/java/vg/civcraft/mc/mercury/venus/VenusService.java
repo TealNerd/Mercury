@@ -7,10 +7,8 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
 import org.apache.logging.log4j.LogManager; // Shaded with Bukkit
 import org.apache.logging.log4j.Logger; // Shaded with Bukkit
-
 import vg.civcraft.mc.mercury.config.MercuryConfigManager;
 import vg.civcraft.mc.mercury.events.EventManager;
 

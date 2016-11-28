@@ -1,17 +1,15 @@
 package vg.civcraft.mc.mercury.rabbitmq;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import vg.civcraft.mc.mercury.MercuryAPI;
-import vg.civcraft.mc.mercury.config.MercuryConfigManager;
-import vg.civcraft.mc.mercury.events.EventManager;
-
 import com.rabbitmq.client.AMQP.BasicProperties;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 import com.rabbitmq.client.ShutdownSignalException;
+import java.util.HashMap;
+import java.util.Map;
+import vg.civcraft.mc.mercury.MercuryAPI;
+import vg.civcraft.mc.mercury.config.MercuryConfigManager;
+import vg.civcraft.mc.mercury.events.EventManager;
 
 public class RabbitConsumer extends DefaultConsumer {
 

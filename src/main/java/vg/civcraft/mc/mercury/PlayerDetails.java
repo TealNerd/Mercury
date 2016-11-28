@@ -1,15 +1,14 @@
 package vg.civcraft.mc.mercury;
 
-import java.lang.reflect.Type;
-import java.util.List;
-import java.util.UUID;
-
 import com.google.common.base.Preconditions;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+import java.util.List;
+import java.util.UUID;
 
 public class PlayerDetails {
     public static final Type LIST_TYPE = new TypeToken<List<PlayerDetails>>() {

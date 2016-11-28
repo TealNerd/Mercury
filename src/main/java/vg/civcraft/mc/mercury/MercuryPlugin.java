@@ -1,10 +1,8 @@
 package vg.civcraft.mc.mercury;
 
 import java.util.logging.Logger;
-
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import vg.civcraft.mc.mercury.config.MercuryConfigManager;
 
 public class MercuryPlugin extends JavaPlugin {

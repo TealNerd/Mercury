@@ -1,5 +1,9 @@
 package vg.civcraft.mc.mercury.rabbitmq;
 
+import com.rabbitmq.client.AMQP;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,15 +12,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeoutException;
-
 import vg.civcraft.mc.mercury.MercuryAPI;
 import vg.civcraft.mc.mercury.ServiceHandler;
 import vg.civcraft.mc.mercury.config.MercuryConfigManager;
-
-import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
 
 public class RabbitHandler implements ServiceHandler {
     public static final String EXCHANGE_DEBUG = "mc.debug";

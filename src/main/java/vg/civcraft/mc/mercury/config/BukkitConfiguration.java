@@ -1,9 +1,7 @@
 package vg.civcraft.mc.mercury.config;
 
 import java.util.concurrent.ThreadFactory;
-
 import org.bukkit.configuration.ConfigurationSection;
-
 import vg.civcraft.mc.mercury.MercuryPlugin;
 
 public class BukkitConfiguration implements Configuration {

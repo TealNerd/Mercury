@@ -1,5 +1,6 @@
 package vg.civcraft.mc.mercury;
 
+import com.google.common.base.Joiner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,12 +10,9 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.UUID;
 import java.util.logging.Logger;
-
 import vg.civcraft.mc.mercury.config.MercuryConfigManager;
 import vg.civcraft.mc.mercury.events.EventListener;
 import vg.civcraft.mc.mercury.events.EventManager;
-
-import com.google.common.base.Joiner;
 
 public class MercuryAPI {
     public static final Joiner joinPipe = Joiner.on("|");

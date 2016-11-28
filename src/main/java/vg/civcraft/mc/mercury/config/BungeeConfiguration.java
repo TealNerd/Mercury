@@ -1,17 +1,15 @@
 package vg.civcraft.mc.mercury.config;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.ThreadFactory;
-
 // Bungee threading deprecated only to deter its use.
 import net.md_5.bungee.api.scheduler.GroupedThreadFactory;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
 import vg.civcraft.mc.mercury.MercuryAPI;
 import vg.civcraft.mc.mercury.MercuryBungePlugin;
-
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 public class BungeeConfiguration implements vg.civcraft.mc.mercury.config.Configuration {
     public BungeeConfiguration() {

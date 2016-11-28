@@ -1,7 +1,6 @@
 package vg.civcraft.mc.mercury;
 
 import java.util.logging.Logger;
-
 import net.md_5.bungee.api.plugin.Plugin;
 
 public class MercuryBungePlugin extends Plugin {

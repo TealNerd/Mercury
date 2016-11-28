@@ -1,12 +1,11 @@
 package vg.civcraft.mc.mercury.config;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.concurrent.ThreadFactory;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class JsonConfiguration implements Configuration {
 

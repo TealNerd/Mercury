@@ -1,7 +1,6 @@
 package vg.civcraft.mc.mercury.jedis;
 
 import java.util.logging.Level;
-
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
