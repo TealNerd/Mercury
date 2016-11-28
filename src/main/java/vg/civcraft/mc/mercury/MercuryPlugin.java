@@ -7,66 +7,67 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import vg.civcraft.mc.mercury.config.MercuryConfigManager;
 
-public class MercuryPlugin extends JavaPlugin{
+public class MercuryPlugin extends JavaPlugin {
 
-	public static MercuryPlugin instance;
-	// This is the name of the server.
-	public static String name;
+    public static MercuryPlugin instance;
+    // This is the name of the server.
+    public static String name;
 
-	public static Logger log() {
-		return MercuryPlugin.instance.getLogger();
-	}
+    public static Logger log() {
+        return MercuryPlugin.instance.getLogger();
+    }
 
-	@Override
-	public void onEnable(){
-		instance = this;
-		saveDefaultConfig();
-		MercuryAPI.initialize();
-		if (!handleService()) {
-			return;
-		}
-		addServerToServerList();
-		Bukkit.getScheduler().runTaskTimer(this, new Runnable(){
-			private long lastTime = System.currentTimeMillis();
-			@Override
-			public void run() {
-				if (lastTime + 2500 <= System.currentTimeMillis()) {
-					lastTime = System.currentTimeMillis();
-					pingService();
-				}
-			}
-		}, 0, MercuryConfigManager.getPingTicks());
+    @Override
+    public void onEnable() {
+        instance = this;
+        saveDefaultConfig();
+        MercuryAPI.initialize();
+        if (!handleService()) {
+            return;
+        }
+        addServerToServerList();
+        Bukkit.getScheduler().runTaskTimer(this, new Runnable() {
+            private long lastTime = System.currentTimeMillis();
 
-		Bukkit.getPluginManager().registerEvents(new MercuryBukkitListener(), this);
-		name = MercuryConfigManager.getServerName();
-	}
+            @Override
+            public void run() {
+                if (lastTime + 2500 <= System.currentTimeMillis()) {
+                    lastTime = System.currentTimeMillis();
+                    pingService();
+                }
+            }
+        }, 0, MercuryConfigManager.getPingTicks());
 
-	public void onDisable(){
-		MercuryAPI.shutdown();
-	}
+        Bukkit.getPluginManager().registerEvents(new MercuryBukkitListener(), this);
+        name = MercuryConfigManager.getServerName();
+    }
 
-	public void addChannels(String... channels){
-		MercuryAPI.addChannels(channels);
-	}
+    public void onDisable() {
+        MercuryAPI.shutdown();
+    }
 
-	public void sendMessage(String dest, String message, String... channels){
-		MercuryAPI.sendMessage(dest, message, channels);
-	}
+    public void addChannels(String... channels) {
+        MercuryAPI.addChannels(channels);
+    }
 
-	private void addServerToServerList(){
-		MercuryAPI.addServerToServerList();
-	}
+    public void sendMessage(String dest, String message, String... channels) {
+        MercuryAPI.sendMessage(dest, message, channels);
+    }
 
-	private boolean handleService(){
-		ServiceHandler handler = ServiceManager.getService();
-		boolean enabled = handler != null;
-		if (!enabled) {
-			getServer().getPluginManager().disablePlugin(this);
-		}
-		return enabled;
-	}
+    private void addServerToServerList() {
+        MercuryAPI.addServerToServerList();
+    }
 
-	private void pingService(){
-		MercuryAPI.pingService();
-	}
+    private boolean handleService() {
+        ServiceHandler handler = ServiceManager.getService();
+        boolean enabled = handler != null;
+        if (!enabled) {
+            getServer().getPluginManager().disablePlugin(this);
+        }
+        return enabled;
+    }
+
+    private void pingService() {
+        MercuryAPI.pingService();
+    }
 }
