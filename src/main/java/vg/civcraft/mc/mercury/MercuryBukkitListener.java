@@ -43,8 +43,7 @@ public class MercuryBukkitListener implements Listener {
                 for (String server : MercuryAPI.getAllConnectedServers()) {
                     if (pinged.contains(server)) { // Then they havent removed it.
                         MercuryAPI.instance.removeConnectedServer(server); // So remove them.
-                    }
-                    else {
+                    } else {
                         pinged.add(server); // Add them to be checked.
                     }
                 }
