@@ -11,72 +11,72 @@ import java.util.List;
 import java.util.UUID;
 
 public class PlayerDetails {
-    public static final Type LIST_TYPE = new TypeToken<List<PlayerDetails>>() {
-    }.getType();
+	public static final Type LIST_TYPE = new TypeToken<List<PlayerDetails>>() {
+	}.getType();
 
-    public static PlayerDetails deserialize(String json) {
-        Gson gson = new Gson();
-        try {
-            return gson.fromJson(json, PlayerDetails.class);
-        } catch (JsonSyntaxException e) {
-            return null;
-        }
-    }
+	public static PlayerDetails deserialize(String json) {
+		Gson gson = new Gson();
+		try {
+			return gson.fromJson(json, PlayerDetails.class);
+		} catch (JsonSyntaxException e) {
+			return null;
+		}
+	}
 
-    public static String serializeList(List<PlayerDetails> detailsList) {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try {
-            return gson.toJson(detailsList, LIST_TYPE);
-        } catch (JsonIOException e) {
-            return null;
-        }
-    }
+	public static String serializeList(List<PlayerDetails> detailsList) {
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		try {
+			return gson.toJson(detailsList, LIST_TYPE);
+		} catch (JsonIOException e) {
+			return null;
+		}
+	}
 
-    @SuppressWarnings("unchecked")
-    public static List<PlayerDetails> deserializeList(String json) {
-        Gson gson = new Gson();
-        try {
-            return (List<PlayerDetails>) gson.fromJson(json, LIST_TYPE);
-        } catch (JsonSyntaxException e) {
-            return null;
-        }
-    }
+	@SuppressWarnings("unchecked")
+	public static List<PlayerDetails> deserializeList(String json) {
+		Gson gson = new Gson();
+		try {
+			return (List<PlayerDetails>) gson.fromJson(json, LIST_TYPE);
+		} catch (JsonSyntaxException e) {
+			return null;
+		}
+	}
 
-    public PlayerDetails() {
-    }
+	public PlayerDetails() {
+	}
 
-    public PlayerDetails(UUID aid, String pn, String sn) {
-        reset(aid, pn, sn);
-    }
+	public PlayerDetails(UUID aid, String pn, String sn) {
+		reset(aid, pn, sn);
+	}
 
-    public void reset(UUID aid, String pn, String sn) {
-        this.accountId = Preconditions.checkNotNull(aid);
-        this.playerName = Preconditions.checkNotNull(pn);
-        this.serverName = Preconditions.checkNotNull(sn);
-    }
+	public void reset(UUID aid, String pn, String sn) {
+		this.accountId = Preconditions.checkNotNull(aid);
+		this.playerName = Preconditions.checkNotNull(pn);
+		this.serverName = Preconditions.checkNotNull(sn);
+	}
 
-    public UUID getAccountId() {
-        return this.accountId;
-    }
+	public UUID getAccountId() {
+		return this.accountId;
+	}
 
-    public String getPlayerName() {
-        return this.playerName;
-    }
+	public String getPlayerName() {
+		return this.playerName;
+	}
 
-    public String getServerName() {
-        return this.serverName;
-    }
+	public String getServerName() {
+		return this.serverName;
+	}
 
-    public String serialize() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try {
-            return gson.toJson(this);
-        } catch (JsonIOException e) {
-            return null;
-        }
-    }
+	public String serialize() {
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		try {
+			return gson.toJson(this);
+		} catch (JsonIOException e) {
+			return null;
+		}
+	}
 
-    private UUID accountId;
-    private String playerName;
-    private String serverName;
+	private UUID accountId;
+	private String playerName;
+	private String serverName;
 }

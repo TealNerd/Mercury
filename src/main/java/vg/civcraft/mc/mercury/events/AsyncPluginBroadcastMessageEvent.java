@@ -11,36 +11,36 @@ import org.bukkit.event.HandlerList;
  */
 public class AsyncPluginBroadcastMessageEvent extends Event {
 
-    private static final HandlerList handle = new HandlerList();
-    private String originServer;
-    private String channel;
-    private String message;
+	private static final HandlerList handle = new HandlerList();
+	private String originServer;
+	private String channel;
+	private String message;
 
-    public AsyncPluginBroadcastMessageEvent(String originServer, String channel, String message) {
-        this.originServer = originServer;
-        this.channel = channel;
-        this.message = message;
-    }
+	public AsyncPluginBroadcastMessageEvent(String originServer, String channel, String message) {
+		this.originServer = originServer;
+		this.channel = channel;
+		this.message = message;
+	}
 
-    @Override
-    public HandlerList getHandlers() {
-        return handle;
-    }
+	@Override
+	public HandlerList getHandlers() {
+		return handle;
+	}
 
-    public static HandlerList getHandlerList() {
-        return handle;
-    }
+	public static HandlerList getHandlerList() {
+		return handle;
+	}
 
-    public String getOriginServer() {
-        return originServer;
-    }
+	public String getOriginServer() {
+		return originServer;
+	}
 
-    public String getChannel() {
-        return channel;
-    }
+	public String getChannel() {
+		return channel;
+	}
 
-    public String getMessage() {
-        return message;
-    }
+	public String getMessage() {
+		return message;
+	}
 
 }

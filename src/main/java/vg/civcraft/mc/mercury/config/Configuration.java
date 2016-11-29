@@ -3,19 +3,19 @@ package vg.civcraft.mc.mercury.config;
 import java.util.concurrent.ThreadFactory;
 
 public interface Configuration {
-    String getHost();
+	String getHost();
 
-    String getPassword();
+	String getPassword();
 
-    Integer getPort();
+	Integer getPort();
 
-    String getServerName();
+	String getServerName();
 
-    String getServiceHandler();
+	String getServiceHandler();
 
-    String getUserName();
+	String getUserName();
 
-    Boolean getDebug();
+	Boolean getDebug();
 
-    ThreadFactory getThreadFactory();
+	ThreadFactory getThreadFactory();
 }
