@@ -5,7 +5,7 @@
 	<groupId>vg.civcraft.mc.mercury</groupId>
 	<artifactId>Mercury</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.19</version>
+	<version>1.2.20</version>
 	<name>Mercury</name>
 	<url>https://github.com/DevotedMC/Mercury</url>
 
@@ -89,14 +89,14 @@
 		<dependency>
 			<groupId>net.md-5</groupId>
 			<artifactId>bungeecord-api</artifactId>
-			<version>1.10-SNAPSHOT</version>
+			<version>1.11-SNAPSHOT</version>
 			<scope>provided</scope>
 			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.10-R0.1-SNAPSHOT</version>
+			<version>1.11-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -117,7 +117,7 @@
 		<dependency>
 			<groupId>net.md-5</groupId>
 			<artifactId>bungeecord-protocol</artifactId>
-			<version>1.10-SNAPSHOT</version>
+			<version>1.11-SNAPSHOT</version>
 			<scope>provided</scope>
 			<type>jar</type>
 		</dependency>
